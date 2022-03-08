@@ -1,21 +1,24 @@
 #! /usr/bin/env python3
+# coding: utf-8
 
-# coding:utf-8
-
-from os import path, name
-import logging as log
-
-log.basicConfig(level=log.DEBUG)
-
+import os
+import logging as lg
 
 def launch_analysis(data_file):
-   directory = path.dirname(path.dirname(__file__)) # we get the right path.=> (Obtenir le chemin)
-   path_to_file = path.join(directory, "data", data_file) # with this path, we go inside the folder `data` and get the file.
+   path_to_file = os.path.join("data", data_file)
+
+   file_name = os.path.basename(path_to_file)
+   directory = os.path.dirname(path_to_file)
+   lg.info("Opening data file {} from directory '{}'".format(file_name,directory))
 
    try:
       with open(path_to_file,"r") as f:
-         lecture = f.readline()
-         log.debug("Yeah!, vous lisez la premiere ligne. Voici le contenu du fichier xml:\n{}".format(lecture))
-   
+            preview = f.readline()
+            lg.debug("Yeah! We managed to read the file. Here is a preview: {%s}" % preview)
    except FileNotFoundError as e:
-      log.critical("Ow! Here's error:{}".format(e))
+        lg.critical("Ow :( The file was not found. Here is the original message of the exception : {%s}" % e)
+   except:
+        lg.critical('Destination unknown')
+
+if __name__ == "__main__":
+   launch_analysis("SyceronBrut.xml")
