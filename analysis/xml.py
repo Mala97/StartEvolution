@@ -5,7 +5,7 @@ import os
 import logging as lg
 
 def launch_analysis(data_file):
-   path_to_file = os.path.join("data", data_file)
+   path_to_file = os.path.join(os.path.join("data", data_file))
 
    file_name = os.path.basename(path_to_file)
    directory = os.path.dirname(path_to_file)
