@@ -1,23 +1,21 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python 3
 
 # coding: utf-8
 
-import argparse   # Arguments
 import logging as lg
-
-#import des modules
+import argparse
 import analysis.csv as c_an
 import analysis.xml as x_an
+
 
 lg.basicConfig(level=lg.DEBUG)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--extension", help="""Type de fichiers a analyser? C'est CSV ou XML""")
-    parser.add_argument("-d", "--datafile",  help="""CSV, un fichier contient des informations 
-    	                    aux sujets des membres et parlements""")
-    parser.add_argument("-p","--byparty",action='store_true',help="displays a graph for each political party")
-    return parser.parse_args()
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-e", "--extension", help="""File's contenu CSV or XML""")
+	parser.add_argument("-d", "--datafile", help=""" CSV containing of data members parliament""")
+
+	return parser.parse_args()
 
 
 def main():

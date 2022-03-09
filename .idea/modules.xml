@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/OpenDjango.iml" filepath="$PROJECT_DIR$/.idea/OpenDjango.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OpenClassroom.iml" filepath="$PROJECT_DIR$/.idea/OpenClassroom.iml" />
     </modules>
   </component>
 </project>
